@@ -3,6 +3,13 @@ import useToggle from '../hooks/useToggle'
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
+  position: fixed;
+  padding: var(--margin);
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #0A192F;
+
   * {
     font: .85rem 'SF Mono';
 
@@ -57,7 +64,7 @@ const HamburgerMenu = styled.button`
 `;
 
 function Nav() {
-  const [menuOpen, toggle] = useToggle(true);
+  const [menuOpen, toggle] = useToggle(false);
 
   return (
     <StyledNav menuOpen={menuOpen}>

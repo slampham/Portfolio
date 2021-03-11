@@ -4,6 +4,10 @@
   box-sizing: border-box;
 } /* reset.css */
 
+:root {  /* GLOBAL VARIABLES */
+  --margin: 1.5rem;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -16,7 +20,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #0a192f;
   color: #8892B0;
-  padding: 7%;
+  padding: var(--margin);
+  min-height: 150vh;  /*!FIXME: REDUCE IN FINAL VERSION */
 }
 
 button {
@@ -39,4 +44,3 @@ code {
        url('fonts/SFMono/SFMono-Regular.woff') format('woff'),
        url('fonts/SFMono/SFMono-Regular.ttf') format('truetype');
 }
-
