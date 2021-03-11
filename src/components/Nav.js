@@ -17,25 +17,6 @@ const StyledNav = styled.nav`
       color: #DCFFFF;
     }
   }
-
-  ol {
-    padding: 2em 0 2em 50%;
-    padding-left: 50%;
-    display: ${props => props.menuOpen ? 'flex' : 'none'};
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style-type: none;
-    counter-reset: item;
-
-    li {
-      &:before {
-        content: "0" counter(item) ". ";
-        color: #6EFBFF;
-      }
-      counter-increment: item;
-    }
-  }
 `;
 
 const HamburgerButton = styled.button`
@@ -64,27 +45,45 @@ const HamburgerButton = styled.button`
 `;
 
 const Menu = styled.ol`
+  background-color: #112240;
+
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
+  left: 20vw;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+
+  display: ${props => props.menuOpen ? 'flex' : 'none'};
+  list-style-type: none;
+  counter-reset: item;
+
+  li {
+    &:before {
+      content: "0" counter(item) ". ";
+      color: #6EFBFF;
+    }
+    counter-increment: item;
+    margin: 2em;
+  }
 `;
 
 function Nav() {
   const [menuOpen, toggle] = useToggle(false);
 
   return (
-    <StyledNav menuOpen={menuOpen}>
+    <StyledNav >
       <HamburgerButton onClick={toggle}>  
         <div/>
         <div/>
         <div/>
       </HamburgerButton>
 
-      <Menu>
+      <Menu menuOpen={menuOpen} >
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
