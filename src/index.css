@@ -16,6 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #0a192f;
   color: #8892B0;
+  padding: 7%;
 }
 
 button {

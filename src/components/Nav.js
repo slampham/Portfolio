@@ -1,4 +1,5 @@
 import React from 'react'
+import useToggle from '../hooks/useToggle'
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
@@ -13,7 +14,7 @@ const StyledNav = styled.nav`
   ol {
     padding: 2em 0 2em 50%;
     padding-left: 50%;
-    display: flex;
+    display: ${props => props.menuOpen ? 'flex' : 'none'};
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
@@ -30,9 +31,42 @@ const StyledNav = styled.nav`
   }
 `;
 
+const HamburgerMenu = styled.button`
+  outline-style: none;
+  border: none;
+  padding: 0;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  div {
+    height: 2px;
+    width: 40px;
+    background-color: #00BA8D;
+    margin: 4px 0;
+
+    &:nth-of-type(2) {
+      width: 75%;
+    }
+
+    &:nth-of-type(3) {
+      width: 60%;
+    }
+  }
+`;
+
 function Nav() {
+  const [menuOpen, toggle] = useToggle(true);
+
   return (
-    <StyledNav>
+    <StyledNav menuOpen={menuOpen}>
+      <HamburgerMenu onClick={toggle}>  
+        <div/>
+        <div/>
+        <div/>
+      </HamburgerMenu>
+
       <ol>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
