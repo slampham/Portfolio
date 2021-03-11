@@ -4,10 +4,10 @@ import styled from 'styled-components'
 
 const StyledNav = styled.nav`
   position: fixed;
-  padding: var(--margin);
   top: 0;
   right: 0;
   left: 0;
+  padding: var(--margin);
   background-color: #0A192F;
 
   * {
@@ -38,7 +38,7 @@ const StyledNav = styled.nav`
   }
 `;
 
-const HamburgerMenu = styled.button`
+const HamburgerButton = styled.button`
   outline-style: none;
   border: none;
   padding: 0;
@@ -63,24 +63,34 @@ const HamburgerMenu = styled.button`
   }
 `;
 
+const Menu = styled.ol`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
 function Nav() {
   const [menuOpen, toggle] = useToggle(false);
 
   return (
     <StyledNav menuOpen={menuOpen}>
-      <HamburgerMenu onClick={toggle}>  
+      <HamburgerButton onClick={toggle}>  
         <div/>
         <div/>
         <div/>
-      </HamburgerMenu>
+      </HamburgerButton>
 
-      <ol>
+      <Menu>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
         <button>Resume</button>
-      </ol>
+      </Menu>
     </StyledNav>
   )
 }
