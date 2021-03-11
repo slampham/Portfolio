@@ -1,5 +1,5 @@
 import React from 'react'
-import Project from '../Project/Project'
+import Project from './Project'
 
 function Projects(props) {
   //TODO: GET GITHUB URLS FOR SRC
@@ -18,7 +18,7 @@ function Projects(props) {
       <Project 
         img=''
         name='10x Developer'
-        desc='A research project for understanding what separates the 10x developers from average ones. Some factors may surprise you. Did you know 10x developers have 4000% more issue comments than regular developers?'
+        desc='A research project for understanding what separates the 10x developers from average ones. Some factors may surprise you. Did you know 10x developers have 5000% more issue comments than regular developers?'
         techs={['BigQuery', 'Github API', 'Radon']}
         code=''
         site=''

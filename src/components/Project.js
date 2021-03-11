@@ -1,24 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { AiFillGithub } from 'react-icons/ai';
+import { BsCodeSlash } from 'react-icons/bs';
 
 function Project(props) {
-  const techs = props.techs.map(tech => <li className='tech'>{tech}</li>)
+  const techs = props.techs.map(tech => <li>{tech}</li>)
 
   return (
-    <div className='Project' >
-      <img className='img' src={props.img} alt={props.name} />
+    <div >
+      <img src={props.img} alt={props.name} />
 
-      <div className="content">
-        <h3 className='name'>{props.name}</h3>
-        <p className='desc'>{props.desc}</p>
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.desc}</p>
         <ul>{techs}</ul>
 
-        <div className="links">
-          <a href={props.code} className='code'>
-            <img src="https://w7.pngwing.com/pngs/783/228/png-transparent-github-software-developer-source-code-programmer-mascot-logo-mammal-cat-like-mammal-carnivoran.png"/>
+        <div>
+          <a href={props.code}>
+            <BsCodeSlash />
           </a>
-          <a href={props.site} className='site'>
-            <img src="https://pics.freeicons.io/uploads/icons/png/18926654601543238879-512.png"/>
+          <a href={props.site}>
+            <AiFillGithub />
           </a>
         </div>
       </div>

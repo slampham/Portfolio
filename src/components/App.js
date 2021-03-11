@@ -1,19 +1,24 @@
-import './App.css';
+import styled from 'styled-components'
 
-import Cover from './Cover/Cover'
-import Section from './Section/Section';
-import Projects from './Projects/Projects'
+import Nav from './Nav'
+import Cover from './Cover'
+import Section from './Section'
+import Projects from './Projects'
+
+const StyledApp = styled.div``;
 
 function App() {
   return (
-    <div className="App">
+    <StyledApp>
+      <Nav/>
       <Cover/>
+      <Section header='About Me'/>
       <Section header='Projects'>
         <Projects />
       </Section>
       <Section header='Skills'/>
-      <Section header='Contact Me' />
-    </div>
+      <Section header="Let's get in touch!"/>
+    </StyledApp>
   );
 }
 

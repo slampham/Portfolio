@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 function Section(props) {
   return (
-    <section className='Section'>
-      <h2 className='header'>{props.header}</h2>
+    <section>
+      <h2>{props.header}</h2>
       {props.children}
     </section>
   )
