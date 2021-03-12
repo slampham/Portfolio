@@ -29,7 +29,8 @@ const StyledNav = styled.nav`
   bottom: 0;
   right: 0;
 
-  left: ${({menuOpen}) => menuOpen ? '20vw' : '100%'}; /* Animations */
+  /*!FIXME: transition kind of ugly. May require using translate past screen */
+  left: ${({menuOpen}) => menuOpen ? '25vw' : '100%'}; /* Animations */
   overflow: hidden;
   transition: all 0.3s ease-out;
 
@@ -51,7 +52,7 @@ const StyledNav = styled.nav`
   }
 `;
 
-const Hamburger = css`
+const XButtonStyling = css`
   div {
     height: 2px;
     width: 40px;
@@ -68,7 +69,7 @@ const Hamburger = css`
   }
 `;
 
-const X_button = css`
+const hamburgerStyling = css`
   color: #00BA8D;
   font-size: 30px;
 `;
@@ -84,7 +85,7 @@ const MenuButton = styled.button`
   flex-direction: column;
   align-items: flex-end;
 
-  ${ props => props.menuOpen ? X_button : Hamburger }
+  ${ props => props.menuOpen ? hamburgerStyling : XButtonStyling }
 `;
 
 function Nav() {
