@@ -2,7 +2,7 @@ import React from 'react'
 import useToggle from '../hooks/useToggle'
 import styled, { css } from 'styled-components'
 
-const StyledNav = styled.nav`
+const MenuBar = styled.div`
   height: 5rem;
   position: fixed;
   top: 0;
@@ -12,26 +12,26 @@ const StyledNav = styled.nav`
   background-color: #0A192F;
 `;
 
-const Menu = styled.ol`
+const StyledNav = styled.nav`
   font: .85rem 'SF Mono';
   background-color: #112240;
   color: #DCFFFF;
-
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 20vw;
+  list-style-type: none;
+  counter-reset: item;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  display: ${props => props.menuOpen ? 'flex' : 'none'};
-  list-style-type: none;
-  counter-reset: item;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
 
+  left: ${({menuOpen}) => menuOpen ? '20vw' : '100%'}; /* Animations */
+  overflow: hidden;
+  transition: all 0.3s ease-out;
 
   > * {
     margin: 2em;
@@ -90,21 +90,21 @@ const MenuButton = styled.button`
 function Nav() {
   const [menuOpen, toggle] = useToggle(false);
 
-  function buttonContent() { //!FIXME: not sure if setting up conditional right
+  function buttonContent() {
     return menuOpen ? 'X' : <><div/><div/><div/></>;
   }
 
   return (
     <>
-      <StyledNav />
+      <MenuBar />
 
-      <Menu menuOpen={menuOpen} >
+      <StyledNav menuOpen={menuOpen} >
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
         <button>Resume</button>
-      </Menu>
+      </StyledNav>
 
       <MenuButton menuOpen={menuOpen} onClick={toggle}>  
         {buttonContent()}
