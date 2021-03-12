@@ -1,15 +1,12 @@
-import styled from 'styled-components'
-
 import Nav from './Nav'
 import Cover from './Cover'
 import Section from './Section'
 import Projects from './Projects'
-
-const StyledApp = styled.div``;
+// import GlobalStyle from '../styles/GlobalStyle'
 
 function App() {
   return (
-    <StyledApp>
+    <>
       <Nav/>
       <Cover/>
       <Section header='About Me'/>
@@ -18,7 +15,7 @@ function App() {
       </Section>
       <Section header='Skills'/>
       <Section header="Let's get in touch!"/>
-    </StyledApp>
+    </>
   );
 }
 
