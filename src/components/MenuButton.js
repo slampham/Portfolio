@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-const XButtonStyling = css`
+const hamburgerStyling = css`
   div {
     height: 2px;
     width: 40px;
@@ -18,7 +18,7 @@ const XButtonStyling = css`
   }
 `;
 
-const hamburgerStyling = css`
+const XButtonStyling = css`
   color: #00BA8D;
   font-size: 30px;
 `;
@@ -34,7 +34,7 @@ const StyledButton = styled.button`
   flex-direction: column;
   align-items: flex-end;
 
-  ${ props => props.menuOpen ? hamburgerStyling : XButtonStyling }
+  ${ props => props.menuOpen ? XButtonStyling : hamburgerStyling }
 `;
 
 function MenuButton({ menuOpen, onClick }) {
@@ -43,7 +43,7 @@ function MenuButton({ menuOpen, onClick }) {
   }
 
   return (
-    <StyledButton onClick={onClick}>
+    <StyledButton menuOpen={menuOpen} onClick={onClick}>
       { buttonContent() }
     </StyledButton>
   )

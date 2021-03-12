@@ -5,8 +5,7 @@ const StyledNav = styled.nav`
   font: .85rem 'SF Mono';
   background-color: #112240;
   color: #DCFFFF;
-  list-style-type: none;
-  counter-reset: item;
+  backdrop-filter: blur(1px);
 
   display: flex;
   flex-direction: column;
@@ -21,12 +20,14 @@ const StyledNav = styled.nav`
   /*!FIXME: transition kind of ugly. May require using translate past screen */
   left: ${({menuOpen}) => menuOpen ? '25vw' : '100%'}; /* Animations */
   overflow: hidden;
-  transition: all 0.3s ease-out;
+  transition: all .2s ease-out;
 
   > * {
     margin: 2em;
   }
 
+  list-style-type: none;
+  counter-reset: item;
   li {
     &:before {
       content: "0" counter(item) ". ";
