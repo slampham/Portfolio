@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import ThemeContext from '../contexts/ThemeContext'
 
 const StyledNav = styled.nav`
   font: .85rem 'SF Mono';
-  background-color: #112240;
-  color: #DCFFFF;
+  background-color: ${ ({theme}) => theme['light navy'] };
+  color:  ${ ({theme}) => theme['lightest slate'] };
   backdrop-filter: blur(1px);
 
   display: flex;
@@ -31,7 +32,7 @@ const StyledNav = styled.nav`
   li {
     &:before {
       content: "0" counter(item) ". ";
-      color: #6EFBFF;
+      color: ${ ({theme}) => theme.green };
     }
     counter-increment: item;
   }
@@ -43,12 +44,14 @@ const StyledNav = styled.nav`
 `;
 
 function SideMenu({menuOpen}) {
+  const theme = useContext(ThemeContext) //!FIXME: not sure if useContext needs to be inside render
+
   return (
-    <StyledNav menuOpen={menuOpen} >
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <StyledNav {...{menuOpen, theme}}>
+      <a href="#about"><li>About</li></a>
+      <a href="#projects"><li>Projects</li></a>
+      <a href="#skills"><li>Skills</li></a>
+      <a href="#contact"><li>Contact</li></a>
       <button>Resume</button>
     </StyledNav>
   )
