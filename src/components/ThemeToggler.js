@@ -6,7 +6,7 @@ import { RiMoonClearFill } from 'react-icons/ri'
 const StyledButton = styled.button`
   padding: 0;
   height: 100%;
-  width: ${ ({width}) => width }
+  width: ${ ({width}) => width + 'px'};
 `
 
 function ThemeToggler() {
@@ -14,9 +14,8 @@ function ThemeToggler() {
   const ref = useRef(null)
 
   useEffect(() => {
-    console.log(ref.current.clientHeight)
     setWidth(ref.current.clientHeight)
-    console.log(ref.current.clientWidth)
+    console.log(ref.current)
   }, [width])
 
   return (
