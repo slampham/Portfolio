@@ -4,7 +4,6 @@ import XButton from './XButton'
 
 const StyledNav = styled.nav`
   font: 1rem 'SF Mono';
-  font-family: 'SF Mono';
 
   background-color: var(--light-navy);
   color: var(--lightest-slate);
@@ -36,7 +35,7 @@ const StyledNav = styled.nav`
   li {
     &:before {
       content: "0" counter(item) ". ";
-      color: ${ ({theme}) => theme.green };
+      color: var(--green);
     }
     counter-increment: item;
   }
@@ -44,7 +43,7 @@ const StyledNav = styled.nav`
   button {
     width: 50%;
     border-width: 2px;
-  }
+  } 
 `;
 
 function SideMenu({menuOpen, onClick}) {
