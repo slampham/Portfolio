@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import styled from 'styled-components'
-import ThemeContext from '../contexts/ThemeContext'
 
 const StyledDiv = styled.div`
   height: 5rem;
@@ -9,12 +8,11 @@ const StyledDiv = styled.div`
   right: 0;
   left: 0;
   padding: var(--margin);
-  background-color: ${ ({theme}) => theme.navy };
+  background-color: var(--navy);
 `;
 
 function MenuBar() {
-  const theme = useContext(ThemeContext)
-  return <StyledDiv {...{theme}} />
+  return <StyledDiv/>
 }
 
 export default MenuBar

@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
-import ThemeContext from '../contexts/ThemeContext'
 
 const hamburgerStyling = css`
   div {
     height: 2px;
     width: 40px;
-    background-color: ${ ({theme}) => theme.green };
+    background-color: var(--green);
     margin: 4px 0;
 
     &:nth-of-type(2) {
@@ -20,7 +19,7 @@ const hamburgerStyling = css`
 `;
 
 const XButtonStyling = css`
-  color: ${ ({theme}) => theme.green };
+  color: var(--green);
   font-size: 30px;
 `;
 
@@ -39,14 +38,12 @@ const StyledButton = styled.button`
 `;
 
 function MenuButton({ menuOpen, onClick }) {
-  const theme = useContext(ThemeContext)
-
   function buttonContent() {
     return menuOpen ? 'X' : <><div/><div/><div/></>;
   }
 
   return (
-    <StyledButton {...{menuOpen, onClick, theme}}>
+    <StyledButton {...{menuOpen, onClick}}>
       { buttonContent() }
     </StyledButton>
   )

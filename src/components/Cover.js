@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 const StyledCover = styled.section`
@@ -6,6 +6,14 @@ const StyledCover = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  > * {
+    margin: .75rem 0;
+  }
+
+  span {
+    color: var(--green)
+  }
 `;
 
 function Cover() {

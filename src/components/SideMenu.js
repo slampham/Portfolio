@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import ThemeContext from '../contexts/ThemeContext'
 
 const StyledNav = styled.nav`
   font: .85rem 'SF Mono';
-  background-color: ${ ({theme}) => theme['light navy'] };
-  color:  ${ ({theme}) => theme['lightest slate'] };
+  background-color: var(--light-navy);
+  color: var(--lightest-slate);
   backdrop-filter: blur(1px);
 
   display: flex;
@@ -44,10 +43,8 @@ const StyledNav = styled.nav`
 `;
 
 function SideMenu({menuOpen}) {
-  const theme = useContext(ThemeContext) //!FIXME: not sure if useContext needs to be inside render
-
   return (
-    <StyledNav {...{menuOpen, theme}}>
+    <StyledNav {...{menuOpen}}>
       <a href="#about"><li>About</li></a>
       <a href="#projects"><li>Projects</li></a>
       <a href="#skills"><li>Skills</li></a>
