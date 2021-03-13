@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Hamburger from './Hamburger'
 
 const StyledDiv = styled.div`
   height: 5rem;
@@ -10,8 +11,12 @@ const StyledDiv = styled.div`
   background-color: var(--navy);
 `;
 
-function MenuBar() {
-  return <StyledDiv/>
+function MenuBar({onClick}) {
+  return (
+    <StyledDiv>
+      <Hamburger {...{onClick}} />
+    </StyledDiv>
+  )
 }
 
 export default MenuBar

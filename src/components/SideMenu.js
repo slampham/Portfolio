@@ -1,16 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import XButton from './XButton'
 
 const StyledNav = styled.nav`
-  font: .85rem 'SF Mono';
+  font: 1rem 'SF Mono';
+  font-family: 'SF Mono';
+
   background-color: var(--light-navy);
   color: var(--lightest-slate);
-  backdrop-filter: blur(1px);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   position: fixed;  
   top: 0;
@@ -22,7 +19,15 @@ const StyledNav = styled.nav`
   overflow: hidden;
   transition: all .2s ease-out;
 
-  > * {
+  div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div > * {
     margin: 2em;
   }
 
@@ -42,14 +47,19 @@ const StyledNav = styled.nav`
   }
 `;
 
-function SideMenu({menuOpen}) {
+function SideMenu({menuOpen, onClick}) {
   return (
     <StyledNav {...{menuOpen}}>
-      <a href="#about"><li>About</li></a>
-      <a href="#projects"><li>Projects</li></a>
-      <a href="#skills"><li>Skills</li></a>
-      <a href="#contact"><li>Contact</li></a>
-      <button>Resume</button>
+      <XButton onClick={onClick} />
+
+      <div>
+        <a href="#about"><li>About</li></a>
+        <a href="#projects"><li>Projects</li></a>
+        <a href="#skills"><li>Skills</li></a>
+        <a href="#contact"><li>Contact</li></a>
+        <button>Resume</button>
+      </div>
+
     </StyledNav>
   )
 }

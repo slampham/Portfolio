@@ -13,6 +13,13 @@ const GlobalStyle = createGlobalStyle`
     --green: #64ffda;
   }
 
+  @font-face {
+    font-family: 'SF Mono';
+    src: url('../fonts/SFMono/SFMono-Regular.woff2') format('woff2'),
+        url('../fonts/SFMono/SFMono-Regular.woff') format('woff'),
+        url('../fonts/SFMono/SFMono-Regular.ttf') format('truetype');
+  }
+
   *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -49,12 +56,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
 
-  @font-face {
-    font-family: 'SF Mono';
-    src: url('../fonts/SFMono/SFMono-Regular.woff2') format('woff2'),
-        url('../fonts/SFMono/SFMono-Regular.woff') format('woff'),
-        url('../fonts/SFMono/SFMono-Regular.ttf') format('truetype');
-  }
+  
 `
 
 export default GlobalStyle
