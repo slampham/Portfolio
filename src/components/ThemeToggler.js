@@ -10,9 +10,14 @@ const StyledButton = styled.button`
   height: 100%;
   width: ${ ({width}) => width + 'px'};
 
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  > * {
+    transition: color 1s ease;
+  }
 `
 
 function ThemeToggler() {
