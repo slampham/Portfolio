@@ -1,6 +1,8 @@
+import React, {useContext} from 'react'
 import { createGlobalStyle } from 'styled-components'
+import SFMonoURL from '../fonts/SFMono/SFMono-Regular.woff2'
 
-const GlobalStyle = createGlobalStyle`
+const style = createGlobalStyle`
   :root {  /* GLOBAL VARIABLES */
     --margin: 1.5rem;
     --navy: #0a192f;
@@ -11,13 +13,6 @@ const GlobalStyle = createGlobalStyle`
     --lightest-slate: #ccd6f6;
     --white: #e6f1ff;
     --green: #64ffda;
-  }
-
-  @font-face {
-    font-family: 'SF Mono';
-    src: url('../fonts/SFMono/SFMono-Regular.woff2') format('woff2'),
-        url('../fonts/SFMono/SFMono-Regular.woff') format('woff'),
-        url('../fonts/SFMono/SFMono-Regular.ttf') format('truetype');
   }
 
   *, *::before, *::after {
@@ -55,6 +50,13 @@ const GlobalStyle = createGlobalStyle`
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
+
+  @font-face {
+    font-family: 'SF Mono';
+    src: url(${SFMonoURL}) format('woff2'),
+        url('../fonts/SFMono/SFMono-Regular.woff') format('woff'),
+        url('../fonts/SFMono/SFMono-Regular.ttf') format('truetype');
+  }
 `
 
-export default GlobalStyle
+export default style

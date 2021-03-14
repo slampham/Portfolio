@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import styled from 'styled-components'
 import { RiMoonClearFill } from 'react-icons/ri'
 import { FiSun } from 'react-icons/fi'
-import useToggle from '../hooks/useToggle'
+import {Context} from '../contexts/Context'
 
 const StyledButton = styled.button`
-  color: gray;
   padding: 0;
   height: 100%;
   width: ${ ({width}) => width + 'px'};
@@ -23,16 +22,16 @@ const StyledButton = styled.button`
 function ThemeToggler() {
   const [width, setWidth] = useState(0)
   const ref = useRef(null)
-  const [darkTheme, toggle] = useToggle(true)
+  const {theme, toggleTheme} = useContext(Context)
 
   useEffect(() => {
     setWidth(3 * ref.current.clientHeight)
   }, []) //!FIXME: may want to change to be dependent on height
 
   return (
-    <StyledButton {...{ref, width, onClick: toggle}} >
-      <RiMoonClearFill color={darkTheme && 'white'} />
-      <FiSun color={!darkTheme && 'yellow'} />
+    <StyledButton {...{ref, width, onClick: toggleTheme}} >
+      <RiMoonClearFill color={theme === 'light' ? 'gray' : 'white'} />
+      <FiSun color={theme === 'light' ? 'yellow' : 'gray'} />
     </StyledButton>
   )
 }
