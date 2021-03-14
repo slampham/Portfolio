@@ -16,7 +16,7 @@ const StyledNav = styled.nav`
   /*!FIXME: transition kind of ugly. May require using translate past screen */
   left: ${({menuOpen}) => menuOpen ? '25vw' : '100%'}; /* Animations */
   overflow: hidden;
-  transition: all .2s ease-out;
+  transition: .2s;
 
   div {
     height: 100%;

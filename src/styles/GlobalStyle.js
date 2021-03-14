@@ -1,8 +1,9 @@
 import React, {useContext} from 'react'
 import { createGlobalStyle } from 'styled-components'
 import SFMonoURL from '../fonts/SFMono/SFMono-Regular.woff2'
+import { Context } from '../contexts/Context'
 
-const style = createGlobalStyle`
+const Style = createGlobalStyle`
   :root {  /* GLOBAL VARIABLES */
     --margin: 1.5rem;
     --navy: #0a192f;
@@ -13,6 +14,8 @@ const style = createGlobalStyle`
     --lightest-slate: #ccd6f6;
     --white: #e6f1ff;
     --green: #64ffda;
+    --trans-time: 1s;
+    --trans-delay: ease-in-out;
   }
 
   *, *::before, *::after {
@@ -31,10 +34,12 @@ const style = createGlobalStyle`
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #0a192f;
-    color: #8892B0;
+    background-color: ${({theme}) => theme === 'dark' ? 'var(--navy)' : 'var(--white)'};
+    color: ${({theme}) => theme === 'dark' ? 'var(--slate)' : 'black'};
     padding: var(--margin);
     min-height: 150vh;  /*!FIXME: REDUCE IN FINAL VERSION */
+
+    transition: var(--trans-time) var(--trans-delay);
   }
 
   button {
@@ -42,9 +47,11 @@ const style = createGlobalStyle`
     padding: 1em;
     background: none;
     border-radius: .4em;
-    color: #6EFBFF;
-    border-color: #00BA8D;
+    color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'black'};
+    border-color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'black'};
     border-width: .01rem;
+
+    transition: var(--trans-time) var(--trans-delay);
   }
 
   code {
@@ -59,4 +66,9 @@ const style = createGlobalStyle`
   }
 `
 
-export default style
+function GlobalStyle() {
+  const {theme} = useContext(Context)
+  return <Style theme={theme} />
+}
+
+export default GlobalStyle

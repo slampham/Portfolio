@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   align-items: center;
 
   > * {
-    transition: color 1s ease;
+    transition: color var(--trans-time) ease;
   }
 `
 
