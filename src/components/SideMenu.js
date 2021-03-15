@@ -12,6 +12,7 @@ const StyledNav = styled.nav`
   top: 0;
   bottom: 0;
   right: 0;
+  z-index: 2;
 
   /*!FIXME: transition kind of ugly. May require using translate past screen */
   left: ${({menuOpen}) => menuOpen ? '25vw' : '100%'}; /* Animations */
@@ -35,7 +36,6 @@ const StyledNav = styled.nav`
   li {
     &:before {
       content: "0" counter(item) ". ";
-      color: var(--green);
     }
     counter-increment: item;
   }

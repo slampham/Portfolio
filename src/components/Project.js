@@ -1,30 +1,67 @@
 import React from 'react'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { AiFillGithub } from 'react-icons/ai';
 import { BsCodeSlash } from 'react-icons/bs';
 
+const StyledProject = styled.div`
+  position: relative;
+
+  figcaption {
+    padding: 0 1em;
+    position: absolute;
+    display: grid;
+    row-gap: 1em;
+
+    h3 {
+      color: var(--lightest-slate);
+      font-size: 1.4rem;
+      filter: brightness(2);
+    }
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+
+      li {
+        font-size: 14px;
+        display: inline-block;
+
+        & + li {
+          margin-left: 1em;
+        }
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    opacity: 20%;
+  }
+`
 function Project(props) {
-  const techs = props.techs.map(tech => <li>{tech}</li>)
+  const {img, name, desc, techs, code, site} = props
+  const Techs = techs.map(tech => <li>{tech}</li>)
 
   return (
-    <div >
-      <img src={props.img} alt={props.name} />
-
-      <div>
-        <h3>{props.name}</h3>
-        <p>{props.desc}</p>
-        <ul>{techs}</ul>
+    <StyledProject img={img}>
+      <figcaption>
+        <h3>{name}</h3>
+        <p>{desc}</p>
+        <ul>{Techs}</ul>
 
         <div>
-          <a href={props.code}>
+          <a href={code}>
             <BsCodeSlash />
           </a>
-          <a href={props.site}>
+          <a href={site}>
             <AiFillGithub />
           </a>
         </div>
-      </div>
-    </div>
+      </figcaption>
+
+      <img src={img} alt={name}/>
+    </StyledProject>
   )
 }
 

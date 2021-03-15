@@ -19,7 +19,6 @@ function App() {
         <GlobalStyle/>
         <Nav/>
         <Cover/>
-        <Section header='About Me'/>
         <Section header='Projects'>
           <Projects />
         </Section>
