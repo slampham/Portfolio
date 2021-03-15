@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from 'react'
 import styled from 'styled-components'
 import { RiMoonClearFill } from 'react-icons/ri'
 import { FiSun } from 'react-icons/fi'
-import {Context} from '../contexts/Context'
+import { Context } from '../contexts/Context'
 
 const StyledButton = styled.button`
   padding: 0;

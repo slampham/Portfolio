@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import {Context} from '../contexts/Context'
 
 const StyledCover = styled.section`
   min-height: 100vh;
@@ -8,17 +9,30 @@ const StyledCover = styled.section`
   justify-content: center;
 
   > * {
-    margin: .75rem 0;
+    margin: .5rem 0;
   }
 
   span {
-    color: var(--green)
+    font: 1rem 'SF Mono';
+    color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'black'};
+  }
+
+  strong {
+    font-size: 2rem;
+    color: ${({theme}) => theme === 'dark' ? 'var(--lightest-slate)' : 'black'};
+  }
+
+  button {
+    margin-top: 4em;
+    width: 12em;
   }
 `;
 
 function Cover() {
+  const {theme} = useContext(Context)
+
   return (
-    <StyledCover>
+    <StyledCover theme={theme}>
       <span>Hi, my name is</span>
       <strong> Spencer Pham. </strong>
       <p>
