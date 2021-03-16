@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { AiFillGithub } from 'react-icons/ai';
-import { BsCodeSlash } from 'react-icons/bs';
+import { FiExternalLink } from 'react-icons/fi';
 
 const StyledProject = styled.div`
   position: relative;
@@ -10,26 +10,33 @@ const StyledProject = styled.div`
   figcaption {
     padding: 0 1em;
     position: absolute;
-    display: grid;
-    row-gap: 1em;
+
+    > * {
+      margin: 1em 0;
+    }
 
     h3 {
-      color: var(--lightest-slate);
       font-size: 1.4rem;
-      filter: brightness(2);
     }
 
     ul {
+      list-style-type: none;
       display: flex;
-      justify-content: flex-end;
+      font: .75rem 'SF Mono';
 
       li {
-        font-size: 14px;
-        display: inline-block;
 
         & + li {
           margin-left: 1em;
         }
+      }
+    }
+
+    a {
+      font-size: 1.25rem;
+
+      & + a {
+        margin-left: 1em;
       }
     }
   }
@@ -52,10 +59,10 @@ function Project(props) {
 
         <div>
           <a href={code}>
-            <BsCodeSlash />
+            <AiFillGithub/>
           </a>
           <a href={site}>
-            <AiFillGithub />
+            <FiExternalLink />
           </a>
         </div>
       </figcaption>
@@ -75,4 +82,5 @@ Project.propTypes = {
   site: PropTypes.string,
 }
 
+export { StyledProject }
 export default Project

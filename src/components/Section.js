@@ -5,10 +5,6 @@ import PropTypes from 'prop-types'
 const StyledSection = styled.section`
   min-height: 100vh;
   color: var(--lightest-slate);
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   h2 {
     display: flex;
