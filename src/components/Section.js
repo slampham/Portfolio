@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const StyledSection = styled.section`
-  min-height: 100vh;
   color: var(--lightest-slate);
 
   h2 {
@@ -41,4 +40,5 @@ Section.propTypes = {
   header: PropTypes.string,
 }
 
+export { StyledSection }
 export default Section

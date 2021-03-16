@@ -5,12 +5,17 @@ import styled from 'styled-components'
 
 import Nav from './Nav'
 import Cover from './Cover'
-import Section from './Section'
+import Section, { StyledSection } from './Section'
 import Projects from './Projects'
 import Skills from './Skills'
+import Contact from './Contact'
 
 const StyledApp = styled.div`
   counter-reset: sectionCounter;
+
+  ${StyledSection} {
+    padding: 5em 0;
+  }
 `
 
 function App() {
@@ -26,7 +31,9 @@ function App() {
         <Section header='Skills'>
           <Skills />
         </Section>
-        <Section header="Let's get in touch!"/>
+        <Section header="Let's get in touch!">
+          <Contact/>
+        </Section>
       </StyledApp>
     </ContextProvider>
   );

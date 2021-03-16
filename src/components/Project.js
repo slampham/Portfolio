@@ -22,7 +22,8 @@ const StyledProject = styled.div`
     ul {
       list-style-type: none;
       display: flex;
-      font: .75rem 'SF Mono';
+      font: .8rem 'SF Mono';
+      color: var(--slate);
 
       li {
 
@@ -66,8 +67,8 @@ function Project(props) {
           </a>
         </div>
       </figcaption>
-
-      <img src={img} alt={name}/>
+      { img && <img src={img} alt={name}/>}
+      
     </StyledProject>
   )
 }

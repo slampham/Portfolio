@@ -44,7 +44,6 @@ const Style = createGlobalStyle`
     background-color: ${({theme}) => theme === 'dark' ? 'var(--navy)' : 'white'};
     color: ${({theme}) => theme === 'dark' ? 'var(--slate)' : 'black'};
     padding: 0 var(--margin);
-    min-height: 150vh;  /*!FIXME: REDUCE IN FINAL VERSION */
   }
 
   button {

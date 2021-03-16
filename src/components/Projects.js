@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Project, { StyledProject } from './Project'
 import RestaurantTinder from '../images/Restaurant Tinder.png'
 import TenXDev from '../images/10x Dev.png'
+import Portfolio from '../images/Portfolio.png'
 
 const StyledProjects = styled.section`
   display: grid;
@@ -32,9 +33,18 @@ function Projects() {
       <Project
         img={TenXDev}
         name='10x Developer'
-        desc='A research project for understanding what separates the 10x developers from average ones. Some factors may surprise you. Did you know 10x developers have 5000% more issue comments than regular developers?'
+        desc='A research project for understanding what separates the 10x developers from average ones. Did you know 10x developers have 5000% more issue comments than regular developers?'
         techs={['BigQuery', 'Github API', 'Radon']}
         code=''
+        site=''
+      />
+
+      <Project
+        img={Portfolio}
+        name='Portfolio'
+        desc="You're seeing it now! Credit goes to Brittany Chiang for the inspiration with theme and UI / UX. (Note that I still wrote every line of code on this site)."
+        techs={['React', 'HTML', 'CSS', 'JavaScript']}
+        cpde=''
         site=''
       />
     </StyledProjects>
