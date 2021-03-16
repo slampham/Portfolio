@@ -29,7 +29,7 @@ function Projects() {
         code='https://github.com/slampham/Restaurant-Tinder'
         site='https://restaurant-tinder-.glitch.me/'
       />
-
+0
       <Project
         img={TenXDev}
         name='10x Developer'
@@ -43,7 +43,7 @@ function Projects() {
         img={Portfolio}
         name='Portfolio'
         desc="You're seeing it now! Credit goes to Brittany Chiang for the inspiration with theme and UI / UX. (Note that I still wrote every line of code on this site)."
-        techs={['React', 'HTML', 'CSS', 'JavaScript']}
+        techs={['React', 'styled-components', ]}
         cpde=''
         site=''
       />

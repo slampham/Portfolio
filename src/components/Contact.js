@@ -23,6 +23,12 @@ const StyledContact = styled.section`
       margin: 0 1em;
     }
   }
+
+  footer {
+    margin-top: 5em;
+    font-size: .9rem;
+    color: DarkGray;
+  }
 `
 
 function Contact() {
@@ -36,6 +42,10 @@ function Contact() {
         <FaGithub/>
         <FaLinkedin/>
       </ul>
+
+      <footer>
+        Credit goes to Brittany Chiang for the inspiration on the theme and UI
+      </footer>
     </StyledContact>
   )
 }
