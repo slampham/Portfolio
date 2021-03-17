@@ -13,10 +13,6 @@ const StyledButton = styled.button`
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  > * {
-    transition: color var(--trans-time) ease;
-  }
 `
 
 function ThemeToggler() {
