@@ -1,6 +1,6 @@
 import React from 'react'
 import useToggle from '../hooks/useToggle'
-import MenuBar from './MenuBar'
+import Header from './Header'
 import SideMenu from './SideMenu'
 
 function Nav() {
@@ -8,7 +8,7 @@ function Nav() {
 
   return (
     <>
-      <MenuBar onClick={toggle} />
+      <Header onClick={toggle} />
       <SideMenu {...{menuOpen, onClick: toggle} } />
     </>
   )
