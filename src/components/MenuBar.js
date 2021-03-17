@@ -15,6 +15,10 @@ const StyledDiv = styled.div`
 
   display: flex;
   align-items: center;
+
+  button {
+    border-color: var(--green);
+  }
 `;
 
 function MenuBar({onClick}) {

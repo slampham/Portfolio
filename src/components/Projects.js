@@ -29,7 +29,7 @@ function Projects() {
         code='https://github.com/slampham/Restaurant-Tinder'
         site='https://restaurant-tinder-.glitch.me/'
       />
-0
+
       <Project
         img={TenXDev}
         name='10x Developer'

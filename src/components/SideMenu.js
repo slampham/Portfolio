@@ -12,12 +12,11 @@ const StyledNav = styled.nav`
   top: 0;
   bottom: 0;
   right: 0;
+  left: 25vw;
   z-index: 2;
 
-  /*!FIXME: transition kind of ugly. May require using translate past screen */
-  left: ${({menuOpen}) => menuOpen ? '25vw' : '100%'}; /* Animations */
-  overflow: hidden;
   transition: .2s;
+  transform: ${({menuOpen}) => menuOpen ? '0' : 'translate(75vw)'};
 
   div {
     height: 100%;
@@ -36,13 +35,17 @@ const StyledNav = styled.nav`
   li {
     &:before {
       content: "0" counter(item) ". ";
+      color: var(--green);
     }
     counter-increment: item;
+    color: var(--lightest-slate);
   }
 
   button {
     width: 50%;
     border-width: 2px;
+    color: var(--green);
+    border-color: var(--green);
   } 
 `;
 

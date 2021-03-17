@@ -22,7 +22,6 @@ const Style = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
   } /* reset.css */
 
   a {
@@ -33,7 +32,7 @@ const Style = createGlobalStyle`
   :before {
     font-family: 'SF Mono';
     font-weight: normal;
-    color: var(--green);
+    color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'navy'};
   }
 
   body {
@@ -51,23 +50,13 @@ const Style = createGlobalStyle`
     padding: 1em;
     background: none;
     border-radius: .4em;
-    color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'black'};
-    border-color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'black'};
+    color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'green'};
+    border-color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'green'};
     border-width: .01rem;
   }
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  }
-
-  body, button, span, strong { /* Transitions */
-    ${({pageLoaded}) => {
-      return (
-        pageLoaded &&
-        "transition: var(--trans-time) var(--trans-delay);" +
-        "transition-property: background-color, color, border-color;"
-      )
-    }}
   }
 
   @font-face {
@@ -76,6 +65,21 @@ const Style = createGlobalStyle`
         url('../fonts/SFMono/SFMono-Regular.woff') format('woff'),
         url('../fonts/SFMono/SFMono-Regular.ttf') format('truetype');
   }
+
+  ${({theme}) => { 
+    return (theme === 'light' && `
+      h1, h2, h3, h4, h5, h6, figcaption, li, p, button, footer {
+        color: black;
+      }
+  `)}}
+
+  ${({pageLoaded}) => {
+    return (pageLoaded && `
+      body, button, span, strong { /* Transitions */
+        transition: var(--trans-time) var(--trans-delay);
+        transition-property: background-color, color, border-color;
+      }
+  `)}}
 `
 
 function GlobalStyle() {
