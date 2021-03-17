@@ -18,7 +18,7 @@ const StyledCover = styled.section`
   }
 
   strong {
-    font-size: 2rem;
+    font-size: clamp(1rem, 10vw, 4rem);
     color: ${({theme}) => theme === 'dark' ? 'var(--lightest-slate)' : 'black'};
   }
 

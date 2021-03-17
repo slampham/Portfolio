@@ -8,13 +8,22 @@ import Portfolio from '../images/Portfolio.png'
 const StyledProjects = styled.section`
   display: grid;
   grid-auto-flow: row;
-  row-gap: 5vh;
+  row-gap: 7.5vh;
 
   ${StyledProject}:nth-child(odd) {
     text-align: right;
 
     ul {
       justify-content: flex-end;
+    }
+
+    @media (min-width: 769px) {
+      display: flex;
+
+      figcaption {
+        right: 0;
+        width: 500px;
+      }
     }
   }
 `

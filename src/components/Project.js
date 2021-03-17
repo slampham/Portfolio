@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { AiFillGithub } from 'react-icons/ai';
@@ -6,7 +6,7 @@ import { FiExternalLink } from 'react-icons/fi';
 
 const StyledProject = styled.div`
   position: relative;
-  min-height: 50vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,13 +47,36 @@ const StyledProject = styled.div`
   }
 
   img {
+    object-fit: cover;
     width: 100%;
+    height: 56.25vw;
     opacity: 20%;
+    z-index: -1;
+  }
+
+  @media (min-width: 769px) {
+    min-height: 0;
+
+    img {
+      width: min(60%, 600px);
+      height: min(33.75vw, 341px);
+      border-radius: 10px;
+    }
+
+    figcaption {
+      width: 50%;
+      border-radius: 10px;
+      
+      p {
+        background-color: var(--light-navy);
+        padding: 1.5em;
+      }
+    }
   }
 `
 function Project(props) {
   const {img, name, desc, techs, code, site} = props
-  const Techs = techs.map(tech => <li>{tech}</li>)
+  const Techs = techs.map(tech => <li key={tech}>{tech}</li>)
 
   return (
     <StyledProject img={img} >

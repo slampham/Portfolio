@@ -22,7 +22,8 @@ function ThemeToggler() {
 
   useEffect(() => {
     setWidth(3 * ref.current.clientHeight)
-  }, []) //!FIXME: may want to change to be dependent on height
+    console.log(ref.current.clientHeight)
+  }, [ref]) //!FIXME: may want to change to be dependent on height
 
   return (
     <StyledButton {...{ref, width, onClick: toggleTheme}} >

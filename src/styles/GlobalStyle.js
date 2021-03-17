@@ -16,6 +16,14 @@ const Style = createGlobalStyle`
     --green: #64ffda;
     --trans-time: 1s;
     --trans-delay: ease-in-out;
+
+    @media (min-width: 500px) {
+      --margin: 3rem;
+    }
+
+    @media (min-width: 1000px) {
+      --margin: 7rem;
+    }
   }
 
   *, *::before, *::after {

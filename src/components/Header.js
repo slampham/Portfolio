@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useRef } from 'react'
 import styled from 'styled-components'
 import Hamburger from './Hamburger'
 import ThemeToggler from './ThemeToggler'
 
 const StyledDiv = styled.div`
-  height: 5rem;
+  height: 80px;
   padding: var(--margin);
   background-color: var(--navy);
 
   position: fixed;
-  top: -5rem;
   right: 0;
   left: 0;
   z-index: 1;
@@ -17,17 +16,21 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
 
-  transform: translateY(${({menuHidden}) => menuHidden ? '0' : '5rem'});
   transition: transform .3s;
 
   button {
     border-color: var(--green);
+  }
+
+  @media (min-width: 500px) {
+    padding: calc(var(--margin) / 2) var(--margin);
   }
 `;
 
 function Header({onClick}) {
   const [y, setY] = useState(window.scrollY)
   const [menuHidden, setMenuHidden] = useState(false)
+  const ref = useRef(null)
   
   const handleScroll = useCallback(e => {
     if (y < window.pageYOffset) {
@@ -44,8 +47,18 @@ function Header({onClick}) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [handleScroll])
 
+  useEffect(() => {
+    let header = ref.current
+    header.style.top = `-${header.clientHeight}px`
+  }, [ref])
+
+  useEffect(() => {
+    let header = ref.current
+    header.style.transform = `translateY(${menuHidden ? '0' : header.clientHeight + 'px'})`
+  }, [menuHidden])
+
   return (
-    <StyledDiv {...{menuHidden}}>
+    <StyledDiv {...{menuHidden, ref}}>
       <ThemeToggler />
       <Hamburger {...{onClick}} />
     </StyledDiv>
