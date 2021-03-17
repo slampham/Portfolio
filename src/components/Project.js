@@ -6,6 +6,10 @@ import { FiExternalLink } from 'react-icons/fi';
 
 const StyledProject = styled.div`
   position: relative;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   figcaption {
     padding: 0 1em;
@@ -50,16 +54,10 @@ const StyledProject = styled.div`
 function Project(props) {
   const {img, name, desc, techs, code, site} = props
   const Techs = techs.map(tech => <li>{tech}</li>)
-  const figCaptionRef = useRef(null)
-  const projectRef = useRef(null)
-
-  useEffect(() => {
-    projectRef.current.style.height = Math.max(projectRef.current.clientHeight, figCaptionRef.current.clientHeight) + 'px'
-  }, [])
 
   return (
-    <StyledProject img={img} ref={projectRef}>
-      <figcaption ref={figCaptionRef} >
+    <StyledProject img={img} >
+      <figcaption >
         <h3>{name}</h3>
         <p>{desc}</p>
         <ul>{Techs}</ul>

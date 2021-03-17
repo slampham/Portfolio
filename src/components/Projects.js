@@ -8,7 +8,7 @@ import Portfolio from '../images/Portfolio.png'
 const StyledProjects = styled.section`
   display: grid;
   grid-auto-flow: row;
-  row-gap: 5em;
+  row-gap: 5vh;
 
   ${StyledProject}:nth-child(odd) {
     text-align: right;
