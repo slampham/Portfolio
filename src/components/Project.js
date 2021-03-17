@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { AiFillGithub } from 'react-icons/ai';
@@ -50,10 +50,16 @@ const StyledProject = styled.div`
 function Project(props) {
   const {img, name, desc, techs, code, site} = props
   const Techs = techs.map(tech => <li>{tech}</li>)
+  const figCaptionRef = useRef(null)
+  const projectRef = useRef(null)
+
+  useEffect(() => {
+    projectRef.current.style.height = Math.max(projectRef.current.clientHeight, figCaptionRef.current.clientHeight) + 'px'
+  }, [])
 
   return (
-    <StyledProject img={img}>
-      <figcaption>
+    <StyledProject img={img} ref={projectRef}>
+      <figcaption ref={figCaptionRef} >
         <h3>{name}</h3>
         <p>{desc}</p>
         <ul>{Techs}</ul>
@@ -67,7 +73,7 @@ function Project(props) {
           </a>
         </div>
       </figcaption>
-      { img && <img src={img} alt={name}/>}
+      { img && <img src={img} alt={name} />}
       
     </StyledProject>
   )
