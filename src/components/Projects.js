@@ -16,13 +16,24 @@ const StyledProjects = styled.section`
     ul {
       justify-content: flex-end;
     }
+  }
 
-    @media (min-width: 769px) {
-      display: flex;
-
+  @media (min-width: 769px) {
+    ${StyledProject} {
       figcaption {
-        right: 0;
         width: 500px;
+      }
+
+      &:nth-child(odd) {
+        figcaption {
+          right: 0;
+        }
+      }
+
+      &:nth-child(even) {
+        img {
+          align-self: flex-end;
+        }
       }
     }
   }

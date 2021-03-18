@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import Hamburger from './Hamburger'
 import ThemeToggler from './ThemeToggler'
 
-const StyledDiv = styled.div`
+const StyledDiv = styled.header`
   height: 80px;
-  padding: var(--margin);
+  padding: 20px var(--margin);
   background-color: var(--navy);
 
   position: fixed;
@@ -22,8 +22,8 @@ const StyledDiv = styled.div`
     border-color: var(--green);
   }
 
-  @media (min-width: 500px) {
-    padding: calc(var(--margin) / 2) var(--margin);
+  @media (min-width: 768px) {
+    padding: 20px 50px;
   }
 `;
 

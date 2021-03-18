@@ -17,11 +17,11 @@ const Style = createGlobalStyle`
     --trans-time: 1s;
     --trans-delay: ease-in-out;
 
-    @media (min-width: 500px) {
+    @media (min-width: 425px) {
       --margin: 3rem;
     }
 
-    @media (min-width: 1000px) {
+    @media (min-width: 768px) {
       --margin: 7rem;
     }
   }

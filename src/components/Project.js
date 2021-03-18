@@ -60,16 +60,16 @@ const StyledProject = styled.div`
     img {
       width: min(60%, 600px);
       height: min(33.75vw, 341px);
-      border-radius: 10px;
+      border-radius: 5px;
     }
 
     figcaption {
       width: 50%;
-      border-radius: 10px;
       
       p {
         background-color: var(--light-navy);
         padding: 1.5em;
+        border-radius: 5px;
       }
     }
   }
