@@ -2,17 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledNavLinks = styled.div`
-  font: 1rem 'SF Mono';
-  color: var(--lightest-slate);
-
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--lightest-slate);
 
-  > * {
-    margin: 2em;
+  * {
+    margin: 1em;
   }
 
   list-style-type: none;
@@ -27,7 +25,7 @@ const StyledNavLinks = styled.div`
   }
 
   button {
-    width: 50%;
+    width: min(50%, 200px);
     border-width: 2px;
     color: var(--green);
     border-color: var(--green);
@@ -37,13 +35,11 @@ const StyledNavLinks = styled.div`
 function NavLinks() {
   return (
     <StyledNavLinks >
-      <div>
-        <a href="#about"><li>About</li></a>
-        <a href="#projects"><li>Projects</li></a>
-        <a href="#skills"><li>Skills</li></a>
-        <a href="#contact"><li>Contact</li></a>
-        <button>Resume</button>
-      </div>
+      <a href="#about"><li>About</li></a>
+      <a href="#projects"><li>Projects</li></a>
+      <a href="#skills"><li>Skills</li></a>
+      <a href="#contact"><li>Contact</li></a>
+      <button>Resume</button>
     </StyledNavLinks>
   )
 }
