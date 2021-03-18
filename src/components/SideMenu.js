@@ -16,10 +16,6 @@ const StyledNav = styled.nav`
 
   transition: .2s;
   transform: ${({menuOpen}) => menuOpen ? '0' : 'translate(75vw)'};
-
-  ${XButton} {
-    margin: 2em;
-  }
 `;
 
 function SideMenu({menuOpen, onClick}) {

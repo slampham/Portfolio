@@ -31,6 +31,16 @@ const StyledContact = styled.section`
     font-size: .9rem;
     color: DarkGray;
   }
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      max-width: 500px;
+    }
+  }
 `
 
 function Contact() {

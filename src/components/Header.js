@@ -16,7 +16,7 @@ const StyledHeader = styled.header`
 
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 
   transition: transform .3s;
 
@@ -29,7 +29,20 @@ const StyledHeader = styled.header`
   }
 `;
 
-const StyledNavLinks = styled(NavLinks)`
+const HeaderNavLinks = styled(NavLinks)`
+  flex-direction: row;
+  font-family: 'SF Mono';
+
+  * {
+    font-size: .75rem;
+    margin: .5em;
+  }
+
+  button {
+    padding: 0;
+    width: 7em;
+    height: 3em;
+  }
 `
 
 function Header({onClick, windowAtLeastTabletWidth}) {
@@ -65,7 +78,7 @@ function Header({onClick, windowAtLeastTabletWidth}) {
   return (
     <StyledHeader {...{menuHidden, ref}}>
       <ThemeToggler />
-      {windowAtLeastTabletWidth ? <StyledNavLinks/> : <Hamburger {...{onClick}} />}
+      {windowAtLeastTabletWidth ? <HeaderNavLinks/> : <Hamburger {...{onClick}} />}
     </StyledHeader>
   )
 }

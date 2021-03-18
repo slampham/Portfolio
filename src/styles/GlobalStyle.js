@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { createGlobalStyle } from 'styled-components'
-import SFMonoURL from '../fonts/SFMono/SFMono-Regular.woff2'
 import { Context } from '../contexts/Context'
+import SFMonoURL from '../fonts/SFMono/SFMono-Regular.woff2'
 
 const Style = createGlobalStyle`
   :root {  /* GLOBAL VARIABLES */

@@ -4,10 +4,8 @@ import styled from 'styled-components'
 const StyledButton = styled.button`
   outline-style: none;
   border: none;
-  position: fixed;
-  right: var(--margin);
   padding: 0;
-  float: right;
+
   display: flex;
   flex-direction: column;
   align-items: flex-end;

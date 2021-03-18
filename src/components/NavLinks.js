@@ -32,9 +32,9 @@ const StyledNavLinks = styled.div`
   } 
 `;
 
-function NavLinks() {
+function NavLinks({className}) {
   return (
-    <StyledNavLinks >
+    <StyledNavLinks className={className}>
       <a href="#about"><li>About</li></a>
       <a href="#projects"><li>Projects</li></a>
       <a href="#skills"><li>Skills</li></a>

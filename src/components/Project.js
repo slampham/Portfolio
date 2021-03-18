@@ -52,15 +52,18 @@ const StyledProject = styled.div`
     height: 56.25vw;
     opacity: 20%;
     z-index: -1;
+
+    border: 1px solid var(--green);
   }
 
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     min-height: 0;
 
     img {
       width: min(60%, 600px);
       height: min(33.75vw, 341px);
       border-radius: 5px;
+      opacity: 50%;
     }
 
     figcaption {
@@ -68,6 +71,7 @@ const StyledProject = styled.div`
       
       p {
         background-color: var(--light-navy);
+        color: var(--light-slate);
         padding: 1.5em;
         border-radius: 5px;
       }
