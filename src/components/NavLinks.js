@@ -1,33 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import XButton from './XButton'
-import NavLinks from './NavLinks'
 
-const StyledNav = styled.nav`
+const StyledNavLinks = styled.div`
   font: 1rem 'SF Mono';
-
-  background-color: var(--light-navy);
   color: var(--lightest-slate);
 
-  position: fixed;  
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 25vw;
-  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  transition: .2s;
-  transform: ${({menuOpen}) => menuOpen ? '0' : 'translate(75vw)'};
-
-  div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  div > * {
+  > * {
     margin: 2em;
   }
 
@@ -50,11 +34,9 @@ const StyledNav = styled.nav`
   } 
 `;
 
-function SideMenu({menuOpen, onClick}) {
+function NavLinks() {
   return (
-    <StyledNav {...{menuOpen}}>
-      <XButton onClick={onClick} />
-
+    <StyledNavLinks >
       <div>
         <a href="#about"><li>About</li></a>
         <a href="#projects"><li>Projects</li></a>
@@ -62,9 +44,8 @@ function SideMenu({menuOpen, onClick}) {
         <a href="#contact"><li>Contact</li></a>
         <button>Resume</button>
       </div>
-
-    </StyledNav>
+    </StyledNavLinks>
   )
 }
 
-export default SideMenu
+export default NavLinks
