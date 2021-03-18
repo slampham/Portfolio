@@ -2,8 +2,9 @@ import React, { useState, useEffect, useCallback, useRef } from 'react'
 import styled from 'styled-components'
 import Hamburger from './Hamburger'
 import ThemeToggler from './ThemeToggler'
+import NavLinks from './NavLinks'
 
-const StyledDiv = styled.header`
+const StyledHeader = styled.header`
   height: 80px;
   padding: 20px var(--margin);
   background-color: var(--navy);
@@ -15,6 +16,7 @@ const StyledDiv = styled.header`
 
   display: flex;
   align-items: center;
+  /* justify-content: space-between; */
 
   transition: transform .3s;
 
@@ -27,7 +29,10 @@ const StyledDiv = styled.header`
   }
 `;
 
-function Header({onClick}) {
+const StyledNavLinks = styled(NavLinks)`
+`
+
+function Header({onClick, windowAtLeastTabletWidth}) {
   const [y, setY] = useState(window.scrollY)
   const [menuHidden, setMenuHidden] = useState(false)
   const ref = useRef(null)
@@ -58,10 +63,10 @@ function Header({onClick}) {
   }, [menuHidden])
 
   return (
-    <StyledDiv {...{menuHidden, ref}}>
+    <StyledHeader {...{menuHidden, ref}}>
       <ThemeToggler />
-      <Hamburger {...{onClick}} />
-    </StyledDiv>
+      {windowAtLeastTabletWidth ? <StyledNavLinks/> : <Hamburger {...{onClick}} />}
+    </StyledHeader>
   )
 }
 

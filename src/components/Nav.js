@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useToggle from '../hooks/useToggle'
 import Header from './Header'
 import SideMenu from './SideMenu'
+import useWindowDimensions from '../hooks/useWindowDimensions'
 
 function Nav() {
-  const [menuOpen, toggle] = useToggle(false);
+  const [menuOpen, toggle] = useToggle(false)
+  const windowDims = useWindowDimensions()
+  const [windowAtLeastTabletWidth, setwindowAtLeastTabletWidth] = useState(false)
+
+  useEffect(() => {
+    setwindowAtLeastTabletWidth(windowDims.width >= 768)
+  }, [windowDims])
 
   return (
     <>
-      <Header onClick={toggle} />
-      <SideMenu {...{menuOpen, onClick: toggle} } />
+      <Header {...{windowAtLeastTabletWidth, onClick: toggle}} />
+      <SideMenu {...{menuOpen, onClick: toggle}} />
     </>
   )
 }
