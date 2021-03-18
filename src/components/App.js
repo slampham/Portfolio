@@ -11,6 +11,9 @@ import Skills from './Skills'
 import Contact from './Contact'
 
 const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   counter-reset: sectionCounter;
 
   ${StyledSection} {

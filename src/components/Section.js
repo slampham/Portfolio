@@ -4,8 +4,10 @@ import PropTypes from 'prop-types'
 
 const StyledSection = styled.section`
   color: var(--lightest-slate);
+  max-width: 1000px;
 
   h2 {
+    font-size: 1.75rem;
     display: flex;
     align-items: center;
     margin-bottom: 1em;
