@@ -65,7 +65,7 @@ function Cover() {
         <p>
           I recently graduated from University of California, Davis with a degree in Computer Science, and I'm currently looking for a place to begin working. I have experience in web development (such as React and node.js), and I'm able to pick up new technologies on the fly! Please contact me if you have an open position available.
         </p>
-        <img src={Face} />
+        <img src={Face} alt='face' />
       </div>
 
       <button>Contact Me</button>

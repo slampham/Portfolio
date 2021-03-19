@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import { Context, ContextProvider } from '../contexts/Context'
@@ -22,23 +22,22 @@ const StyledApp = styled.div`
 `
 
 function App() {
-  const [aboutRef, projectsRef, skillsRef, contactRef] = [useRef(null), useRef(null), useRef(null), useRef(null)]
-  let refs = [aboutRef, projectsRef, skillsRef, contactRef]
-
   return (
     <StyledApp>
-      <GlobalStyle/>
-      <Nav />
-      <Cover ref={aboutRef}/>
-      <Section header='Projects' ref={projectsRef}>
-        <Projects />
-      </Section>
-      <Section header='Skills' ref={skillsRef}>
-        <Skills />
-      </Section>
-      <Section header="Let's get in touch!" ref={contactRef}>
-        <Contact/>
-      </Section>
+      <ContextProvider>
+        <GlobalStyle/>
+        <Nav />
+        <Cover />
+        <Section header='Projects' >
+          <Projects />
+        </Section>
+        <Section header='Skills' >
+          <Skills />
+        </Section>
+        <Section header="Let's get in touch!" >
+          <Contact />
+        </Section>
+      </ContextProvider>
     </StyledApp>
   );
 }
