@@ -63,7 +63,7 @@ function Projects() {
       <Project
         img={Portfolio}
         name='Portfolio'
-        desc="You're seeing it now! Credit goes to Brittany Chiang for the inspiration with theme and UI / UX. (Note that I still wrote every line of code on this site)."
+        desc="You're seeing it now! Credit goes to Brittany Chiang for the inspiration with theme and UI / UX. (Note that I coded everything from scratch)."
         techs={['React', 'styled-components', ]}
         cpde=''
         site=''

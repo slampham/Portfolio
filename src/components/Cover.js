@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import {Context} from '../contexts/Context'
+import { Context } from '../contexts/Context'
+import Face from '../images/face.jfif'
 
 const StyledCover = styled.section`
-  min-height: 100vh;
+  min-height: min(100vh, 1080px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,6 +27,31 @@ const StyledCover = styled.section`
     margin-top: 4em;
     width: 12em;
   }
+
+  img {
+    display: none;
+  }
+
+  p {
+    max-width: 500px;
+  }
+
+  @media (min-width: 768px) {
+    div {
+      display: flex;
+      align-items: center;
+
+      * + * {
+        margin-left: 50px;
+      }
+    }
+
+    img {
+      display: block;
+      border-radius: 50%;
+      width: 200px;
+    }
+  }
 `;
 
 function Cover() {
@@ -35,9 +61,13 @@ function Cover() {
     <StyledCover theme={theme}>
       <span>Hi, my name is</span>
       <strong> Spencer Pham. </strong>
-      <p>
-        I recently graduated from University of California, Davis with a degree in Computer Science, and I'm currently looking for a place to begin working. I have experience in web development (such as React and node.js), and I'm able to pick up new technologies on the fly! Please contact me if you have an open position available.
-      </p>
+      <div>
+        <p>
+          I recently graduated from University of California, Davis with a degree in Computer Science, and I'm currently looking for a place to begin working. I have experience in web development (such as React and node.js), and I'm able to pick up new technologies on the fly! Please contact me if you have an open position available.
+        </p>
+        <img src={Face} />
+      </div>
+
       <button>Contact Me</button>
     </StyledCover>
   )

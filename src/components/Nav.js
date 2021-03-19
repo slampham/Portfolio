@@ -4,7 +4,7 @@ import Header from './Header'
 import SideMenu from './SideMenu'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 
-function Nav() {
+function Nav({refs}) {
   const [menuOpen, toggle] = useToggle(false)
   const windowDims = useWindowDimensions()
   const [windowAtLeastTabletWidth, setwindowAtLeastTabletWidth] = useState(false)
