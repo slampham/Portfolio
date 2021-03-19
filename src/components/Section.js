@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { Switch, Route } from 'react-router'
 
 const StyledSection = styled.section`
   color: var(--lightest-slate);
@@ -29,11 +30,11 @@ const StyledSection = styled.section`
   }
 `
 
-function Section(props) {
+function Section({header, children, path}) {
   return (
-    <StyledSection>
-      <h2>{props.header}</h2>
-      {props.children}
+    <StyledSection id={path}>
+      <h2>{header}</h2>
+      {children}
     </StyledSection>
   )
 }

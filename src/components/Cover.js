@@ -54,11 +54,11 @@ const StyledCover = styled.section`
   }
 `;
 
-function Cover() {
+function Cover({path}) {
   const {theme} = useContext(Context)
 
   return (
-    <StyledCover theme={theme}>
+    <StyledCover theme={theme} id={path}>
       <span>Hi, my name is</span>
       <strong> Spencer Pham. </strong>
       <div>

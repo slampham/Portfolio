@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import { HashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
 
 const StyledNavLinks = styled.div`
@@ -35,10 +36,10 @@ const StyledNavLinks = styled.div`
 function NavLinks({className}) {
   return (
     <StyledNavLinks className={className}>
-      <a href="#about"><li>About</li></a>
-      <a href="#projects"><li>Projects</li></a>
-      <a href="#skills"><li>Skills</li></a>
-      <a href="#contact"><li>Contact</li></a>
+      <HashLink to="/#about"><li>About</li></HashLink>
+      <HashLink to="/#projects"><li>Projects</li></HashLink>
+      <HashLink to="/#skills"><li>Skills</li></HashLink>
+      <HashLink to="/#contact"><li>Contact</li></HashLink>
       <button>Resume</button>
     </StyledNavLinks>
   )

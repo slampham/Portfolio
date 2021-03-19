@@ -1,7 +1,8 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import styled from 'styled-components'
 
-import { Context, ContextProvider } from '../contexts/Context'
+import { ContextProvider } from '../contexts/Context'
 import GlobalStyle from '../styles/GlobalStyle'
 import Nav from './Nav'
 import Cover from './Cover'
@@ -24,20 +25,22 @@ const StyledApp = styled.div`
 function App() {
   return (
     <StyledApp>
-      <ContextProvider>
-        <GlobalStyle/>
-        <Nav />
-        <Cover />
-        <Section header='Projects' >
-          <Projects />
-        </Section>
-        <Section header='Skills' >
-          <Skills />
-        </Section>
-        <Section header="Let's get in touch!" >
-          <Contact />
-        </Section>
-      </ContextProvider>
+      <Router>
+        <ContextProvider>
+          <GlobalStyle/>
+          <Nav />
+          <Cover path='about'/>
+          <Section header='Projects' path='projects' >
+            <Projects />
+          </Section>
+          <Section header='Skills' path='skills' >
+            <Skills />
+          </Section>
+          <Section header="Let's get in touch!" path='contact' >
+            <Contact />
+          </Section>
+        </ContextProvider>
+      </Router>
     </StyledApp>
   );
 }
