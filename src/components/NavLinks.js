@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
+import resume from '../static/resume.pdf'
 
 const StyledNavLinks = styled.div`
   height: 100%;
@@ -40,7 +41,7 @@ function NavLinks({className}) {
       <HashLink to="/#projects"><li>Projects</li></HashLink>
       <HashLink to="/#skills"><li>Skills</li></HashLink>
       <HashLink to="/#contact"><li>Contact</li></HashLink>
-      <button>Resume</button>
+      <button type='submit' onClick={() => window.open(resume)}>Resume</button>
     </StyledNavLinks>
   )
 }
