@@ -1,9 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { Context } from '../contexts/Context'
-import SFMonoURL from '../fonts/SFMono/SFMono-Regular.woff2'
+import Fonts from '../fonts/fonts'
 
 const Style = createGlobalStyle`
+  ${Fonts}
+
   :root {  /* GLOBAL VARIABLES */
     --margin: 1.5rem;
     --navy: #0a192f;
@@ -65,13 +67,6 @@ const Style = createGlobalStyle`
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  }
-
-  @font-face {
-    font-family: 'SF Mono';
-    src: url(${SFMonoURL}) format('woff2'),
-        url('../fonts/SFMono/SFMono-Regular.woff') format('woff'),
-        url('../fonts/SFMono/SFMono-Regular.ttf') format('truetype');
   }
 
   ${({theme}) => { 
