@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import { HashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
-import resume from '../static/resume.pdf'
+import resume from '../static/SpencerPhamResume.pdf'
 
 const StyledNavLinks = styled.div`
   height: 100%;

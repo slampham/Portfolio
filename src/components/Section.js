@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { Switch, Route } from 'react-router'
 
 const StyledSection = styled.section`
   color: var(--lightest-slate);
