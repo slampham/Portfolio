@@ -9,6 +9,11 @@ const StyledButton = styled.button`
   height: 100%;
   width: ${ ({width}) => width + 'px'};
 
+  > * {
+    transition: color var(--trans-time) var(--trans-delay);
+  }
+
+
   position: relative;
   display: flex;
   justify-content: space-around;

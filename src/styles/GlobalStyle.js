@@ -79,12 +79,7 @@ const Style = createGlobalStyle`
   ${({pageLoaded}) => {
     return (pageLoaded && `
       body { /* Transitions */
-        transition-property: background-color;
-      }
-
-      *, :before {
-        transition: var(--trans-time) var(--trans-delay);
-        transition-property: color, border-color;
+        transition: background-color var(--trans-time) var(--trans-delay);
       }
   `)}}
 `
