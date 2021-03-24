@@ -50,7 +50,7 @@ function Contact() {
     <StyledContact theme={theme}>
       <p>Again, please contact me if you're interested or have a position open for a web developer. I have a strong work ethic, and I'll make sure that any product that I work on is completed to perfection!</p>
 
-      <button>Contact Me</button>
+      <a href={`mailto:spencernpham@gmail.com`}><button>Contact Me</button></a>
 
       <ul>
         <FaGithub/>

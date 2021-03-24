@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Context } from '../contexts/Context'
-import Face from '../images/face.jfif'
+import Face from '../images/face.jpg'
 
 const StyledCover = styled.section`
   min-height: min(100vh, 1080px);
@@ -47,9 +47,11 @@ const StyledCover = styled.section`
     }
 
     img {
+      object-fit: cover;
       display: block;
       border-radius: 50%;
       width: 200px;
+      height: 200px;
     }
   }
 `;
@@ -68,7 +70,7 @@ function Cover({path}) {
         <img src={Face} alt='face' />
       </div>
 
-      <button>Contact Me</button>
+      <a href={`mailto:spencernpham@gmail.com`}><button>Contact Me</button></a>
     </StyledCover>
   )
 }

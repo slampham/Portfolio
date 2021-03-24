@@ -18,8 +18,6 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  transition: transform .3s;
-
   button {
     border-color: var(--green);
   }
