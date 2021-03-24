@@ -80,10 +80,9 @@ const Style = createGlobalStyle`
     return (pageLoaded && `
       body { /* Transitions */
         transition-property: background-color;
-        transition: var(--trans-time) var(--trans-delay);
       }
 
-      h1, h2, h3, h4, h5, h6, figcaption, li, p, button, footer, :before {
+      *, :before {
         transition: var(--trans-time) var(--trans-delay);
         transition-property: color, border-color;
       }
