@@ -14,6 +14,8 @@ const StyledHeader = styled.header`
   left: 0;
   z-index: 1;
 
+  transition: transform .3s var(--trans-delay);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
