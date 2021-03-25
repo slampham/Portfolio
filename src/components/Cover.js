@@ -70,7 +70,7 @@ function Cover({path}) {
         <img src={Face} alt='face' />
       </div>
 
-      <a href={`mailto:spencernpham@gmail.com`}><button>Contact Me</button></a>
+      <button onClick={() => window.location.href='mailto:spencernpham@gmail.com'}>Contact Me</button>
     </StyledCover>
   )
 }

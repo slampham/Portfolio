@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
 import resume from '../static/SpencerPhamResume.pdf'
 
-const StyledNavLinks = styled.div`
+const StyledNavLinks = styled.ul`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -24,6 +24,10 @@ const StyledNavLinks = styled.div`
     }
     counter-increment: item;
     color: var(--lightest-slate);
+
+    &:hover {
+      color: var(--green);
+    }
   }
 
   button {

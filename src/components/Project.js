@@ -37,7 +37,7 @@ const StyledProject = styled.div`
       }
     }
 
-    a {
+    .icons a {
       font-size: 1.25rem;
 
       & + a {
@@ -89,7 +89,7 @@ function Project(props) {
         <p>{desc}</p>
         <ul>{Techs}</ul>
 
-        <div>
+        <div className='icons'>
           <a href={code}>
             <AiFillGithub/>
           </a>
@@ -98,8 +98,11 @@ function Project(props) {
           </a>
         </div>
       </figcaption>
-      { img && <img src={img} alt={name} />}
-      
+
+      {/* <a href={site}> */}
+        <img src={img} alt={name} />
+      {/* </a> */}
+
     </StyledProject>
   )
 }
