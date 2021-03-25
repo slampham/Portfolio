@@ -76,7 +76,6 @@ const createFontFaces = (family, style = 'normal') => {
       }
     `;
   }
-
   return styles;
 };
 
@@ -89,5 +88,7 @@ const sfMonoItalic = createFontFaces(sfMono, 'italic');
 const Fonts = css`
   ${calibreNormal + calibreItalic + sfMonoNormal + sfMonoItalic}
 `;
+
+console.log(Fonts)
 
 export default Fonts;

@@ -1,11 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { Context } from '../contexts/Context'
-import Fonts from '../fonts/fonts'
+import '../fonts/fonts.css'
 
 const Style = createGlobalStyle`
-  ${Fonts}
-
   :root {  /* GLOBAL VARIABLES */
     --margin: 1.5rem;
     --navy: #0a192f;
@@ -16,7 +14,7 @@ const Style = createGlobalStyle`
     --lightest-slate: #ccd6f6;
     --white: #e6f1ff;
     --green: #64ffda;
-    --trans-time: 1s;
+    --trans-time: .5s;
     --trans-delay: ease-in-out;
 
     @media (min-width: 425px) {

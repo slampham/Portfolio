@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import styled from 'styled-components'
 

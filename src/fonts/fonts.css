@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Calibre';
+  src: url('./Calibre/Calibre-Regular.woff2') format('woff2'),
+      url('./Calibre/Calibre-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('./Calibre/Calibre-Medium.woff2') format('woff2'),
+      url('./Calibre/Calibre-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('./Calibre/Calibre-Semibold.woff2') format('woff2'),
+      url('./Calibre/Calibre-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('./Calibre/Calibre-RegularItalic.woff2') format('woff2'),
+      url('./Calibre/Calibre-RegularItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('./Calibre/Calibre-MediumItalic.woff2') format('woff2'),
+      url('./Calibre/Calibre-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('./Calibre/Calibre-SemiboldItalic.woff2') format('woff2'),
+      url('./Calibre/Calibre-SemiboldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('./SFMono/SFMono-Regular.woff2') format('woff2'),
+      url('./SFMono/SFMono-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('./SFMono/SFMono-Semibold.woff2') format('woff2'),
+      url('./SFMono/SFMono-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('./SFMono/SFMono-RegularItalic.woff2') format('woff2'),
+      url('./SFMono/SFMono-RegularItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('./SFMono/SFMono-SemiboldItalic.woff2') format('woff2'),
+      url('./SFMono/SFMono-SemiboldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: auto;
+}
