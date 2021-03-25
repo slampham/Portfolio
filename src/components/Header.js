@@ -8,13 +8,14 @@ const StyledHeader = styled.header`
   height: 80px;
   padding: 20px var(--margin);
   background-color: var(--navy);
+  box-shadow: 0 -2px 10px black;
 
   position: fixed;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 99;
 
-  transition: transform .3s var(--trans-delay);
+  transition: transform .25s var(--trans-delay);
 
   display: flex;
   align-items: center;

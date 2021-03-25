@@ -14,6 +14,9 @@ const StyledProject = styled.div`
   figcaption {
     padding: 0 1em;
     position: absolute;
+    background: none;
+    z-index: 1;
+    pointer-events: none; 
 
     > * {
       margin: 1em 0;
@@ -39,31 +42,46 @@ const StyledProject = styled.div`
 
     .icons a {
       font-size: 1.25rem;
+      cursor: pointer;
+      pointer-events: auto; 
 
       & + a {
         margin-left: 1em;
       }
+
+      &:hover {
+        color: var(--green);
+      }
     }
   }
 
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 56.25vw;
-    opacity: 20%;
-    z-index: -1;
+  .img-link {
+    img {
+      object-fit: cover;
+      height: 56.25vw;
+      width: 100%;
+      opacity: 30%;
+      border-radius: 5px;
+      border: 1px solid var(--green);
 
-    border: 1px solid var(--green);
+      transition: opacity var(--trans-time) var(--trans-delay);
+
+      &:hover {
+        opacity: 100%;
+      }
+    }
   }
 
   @media (min-width: 768px) {
     min-height: 0;
 
-    img {
+    .img-link {
       width: min(60%, 600px);
       height: min(33.75vw, 341px);
-      border-radius: 5px;
-      opacity: 50%;
+
+      img {
+        height: 100%;
+      }
     }
 
     figcaption {
@@ -90,18 +108,18 @@ function Project(props) {
         <ul>{Techs}</ul>
 
         <div className='icons'>
-          <a href={code}>
+          <a href={code} target="_blank" rel="noopener noreferrer">
             <AiFillGithub/>
           </a>
-          <a href={site}>
+          <a href={site} target="_blank" rel="noopener noreferrer">
             <FiExternalLink />
           </a>
         </div>
       </figcaption>
 
-      {/* <a href={site}> */}
+      <a href={site} className='img-link' target="_blank" rel="noopener noreferrer">
         <img src={img} alt={name} />
-      {/* </a> */}
+      </a>
 
     </StyledProject>
   )

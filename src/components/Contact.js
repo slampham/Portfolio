@@ -24,6 +24,10 @@ const StyledContact = styled.section`
     > * {
       margin: 0 1em;
     }
+
+    .icon:hover {
+      color: var(--green);
+    }
   }
 
   footer {
@@ -53,8 +57,13 @@ function Contact() {
       <button onClick={() => window.location.href='mailto:spencernpham@gmail.com'}>Contact Me</button>
 
       <ul>
-        <FaGithub/>
-        <FaLinkedin/>
+        <a href='https://github.com/slampham' target="_blank" rel="noopener noreferrer">
+          <FaGithub className='icon'/>
+        </a>
+
+        <a href='https://linkedin.com/in/spencer-pham' target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className='icon'/>
+        </a>
       </ul>
 
       <footer>

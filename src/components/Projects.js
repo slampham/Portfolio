@@ -31,7 +31,7 @@ const StyledProjects = styled.section`
       }
 
       &:nth-child(even) {
-        img {
+        .img-link {
           align-self: flex-end;
         }
       }
@@ -56,8 +56,8 @@ function Projects() {
         name='10x Developer'
         desc='A research project for understanding what separates the 10x developers from average ones. Did you know 10x developers have 5000% more issue comments than regular developers?'
         techs={['BigQuery', 'Github API', 'Radon']}
-        code=''
-        site=''
+        code='https://github.com/slampham/10x-Dev'
+        site='https://colab.research.google.com/drive/1c6-tahKwTqxG8aOacnQ9Y-Bd8VHUrYYU#scrollTo=M-Ye5MoYGDzl'
       />
 
       <Project
@@ -65,8 +65,8 @@ function Projects() {
         name='Portfolio'
         desc="You're seeing it now! Credit goes to Brittany Chiang for the inspiration with theme and UI / UX. (Note that I coded everything from scratch)."
         techs={['React', 'styled-components', ]}
-        cpde=''
-        site=''
+        code='https://github.com/slampham/Portfolio'
+        site='https://spencerpham.dev'
       />
     </StyledProjects>
   )

@@ -14,7 +14,7 @@ const Style = createGlobalStyle`
     --lightest-slate: #ccd6f6;
     --white: #e6f1ff;
     --green: #64ffda;
-    --trans-time: .5s;
+    --trans-time: .3s;
     --trans-delay: ease-in-out;
 
     @media (min-width: 425px) {
@@ -56,11 +56,19 @@ const Style = createGlobalStyle`
   button {
     font-family: 'SF Mono';
     padding: 1em;
-    background: none;
+    background-color: rgba(100, 255, 218, 0);
     border-radius: .4em;
     color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'green'};
     border-color: ${({theme}) => theme === 'dark' ? 'var(--green)' : 'green'};
     border-width: .01rem;
+    outline: none;
+    cursor: pointer;
+    transition: background-color var(--trans-time) ease-out;
+
+    &:hover {
+      color: var(--green);
+      background-color: rgba(100, 255, 218, .1);
+    }
   }
 
   code {
