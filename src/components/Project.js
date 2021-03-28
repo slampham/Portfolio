@@ -1,11 +1,14 @@
 import React, { useContext } from 'react'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { AiFillGithub } from 'react-icons/ai';
-import { FiExternalLink } from 'react-icons/fi';
+import { FiExternalLink, FiPrinter } from 'react-icons/fi';
 import { Context } from '../contexts/Context'
+import useInViewTransition from '../hooks/useInViewTransition'
+import { slowUp } from '../variants'
 
-const StyledProject = styled.div`
+const StyledProject = styled(motion.div)`
   position: relative;
   min-height: 40vh;
   display: flex;
@@ -101,9 +104,12 @@ function Project(props) {
   const {img, name, desc, techs, code, site} = props
   const Techs = techs.map(tech => <li key={tech}>{tech}</li>)
   const {theme} = useContext(Context)
+  const { controls, ref } = useInViewTransition()
 
   return (
-    <StyledProject {...{img, theme}} >
+    <StyledProject {...{img, theme, ref}} 
+      variants={slowUp} initial='hidden' animate={controls}
+    >
       <figcaption >
         <h3>{name}</h3>
         <p>{desc}</p>

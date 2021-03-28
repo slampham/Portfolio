@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { Context } from '../contexts/Context'
 import Face from '../images/face.jpg'
-import { item } from '../variants'
+import { up } from '../variants'
 
 const StyledCover = styled(motion.section)`
   min-height: min(100vh, 1080px);
@@ -66,16 +66,16 @@ function Cover({path}) {
       transition={{delayChildren: .5, staggerChildren: .1}}
       initial='hidden' animate='show'
     >
-      <motion.span variants={item}>Hi, my name is</motion.span>
-      <motion.strong variants={item}> Spencer Pham. </motion.strong>
-      <motion.div variants={item}>
+      <motion.span variants={up}>Hi, my name is</motion.span>
+      <motion.strong variants={up}> Spencer Pham. </motion.strong>
+      <motion.div variants={up}>
         <p>
           I recently graduated from University of California, Davis with a degree in Computer Science, and I'm currently looking for a place to begin working. I have experience in web development (such as React and node.js), and I'm able to pick up new technologies on the fly! Please contact me if you have an open position available.
         </p>
         <img src={Face} alt='face' />
       </motion.div>
 
-      <motion.button onClick={() => window.location.href='mailto:spencernpham@gmail.com'} variants={item}>Contact Me</motion.button>
+      <motion.button onClick={() => window.location.href='mailto:spencernpham@gmail.com'} variants={up}>Contact Me</motion.button>
     </StyledCover>
   )
 }

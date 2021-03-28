@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import resume from '../static/SpencerPhamResume.pdf'
-import { container, item } from '../variants'
+import { stagger, down } from '../variants'
 
 const StyledLinks = styled(motion.ul)`
   height: 100%;
@@ -58,12 +58,12 @@ const StyledLinks = styled(motion.ul)`
 
 function NavLinks({windowAtLeastTabletWidth}) {
   return (
-    <StyledLinks {...{windowAtLeastTabletWidth}} variants={container} initial='hidden' animate='show' >
-      <motion.a href="#about" variants={item}><li>About</li></motion.a>
-      <motion.a href="#projects" variants={item}><li>Projects</li></motion.a>
-      <motion.a href="#skills" variants={item}><li>Skills</li></motion.a>
-      <motion.a href="#contact" variants={item}><li>Contact</li></motion.a>
-      <motion.button type='submit' onClick={() => window.open(resume)} variants={item}>Resume</motion.button>
+    <StyledLinks {...{windowAtLeastTabletWidth}} variants={stagger} initial='hidden' animate='show' >
+      <motion.a href="#about" variants={down}><li>About</li></motion.a>
+      <motion.a href="#projects" variants={down}><li>Projects</li></motion.a>
+      <motion.a href="#skills" variants={down}><li>Skills</li></motion.a>
+      <motion.a href="#contact" variants={down}><li>Contact</li></motion.a>
+      <motion.button type='submit' onClick={() => window.open(resume)} variants={down}>Resume</motion.button>
     </StyledLinks>
   )
 }

@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation } from 'framer-motion' 
+import { up, slowUp } from '../variants'
+import useInViewTransition from '../hooks/useInViewTransition'
 
-const StyledSection = styled.section`
+const StyledSection = styled(motion.section)`
   color: var(--lightest-slate);
   max-width: 1000px;
 
@@ -30,8 +34,12 @@ const StyledSection = styled.section`
 `
 
 function Section({header, children, path}) {
+  const { controls, ref } = useInViewTransition()
+
   return (
-    <StyledSection id={path}>
+    <StyledSection id={path} ref={ref}
+      variants={slowUp} initial='hidden' animate={controls}
+    >
       <h2>{header}</h2>
       {children}
     </StyledSection>
