@@ -1,5 +1,4 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { ContextProvider } from '../contexts/Context'
@@ -25,22 +24,20 @@ const StyledApp = styled.div`
 function App() {
   return (
     <StyledApp>
-      <Router>
-        <ContextProvider>
-          <GlobalStyle/>
-          <Nav />
-          <Cover path='about'/>
-          <Section header='Projects' path='projects' >
-            <Projects />
-          </Section>
-          <Section header='Skills' path='skills' >
-            <Skills />
-          </Section>
-          <Section header="Let's get in touch!" path='contact' >
-            <Contact />
-          </Section>
-        </ContextProvider>
-      </Router>
+      <ContextProvider>
+        <GlobalStyle/>
+        <Nav />
+        <Cover path='about'/>
+        <Section header='Projects' path='projects' >
+          <Projects />
+        </Section>
+        <Section header='Skills' path='skills' >
+          <Skills />
+        </Section>
+        <Section header="Let's get in touch!" path='contact' >
+          <Contact />
+        </Section>
+      </ContextProvider>
     </StyledApp>
   );
 }

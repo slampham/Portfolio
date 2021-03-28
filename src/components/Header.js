@@ -30,22 +30,6 @@ const StyledHeader = styled.header`
   }
 `;
 
-const HeaderNavLinks = styled(NavLinks)`
-  flex-direction: row;
-  font-family: 'SF Mono';
-
-  * {
-    font-size: .75rem;
-    margin: .5em;
-  }
-
-  button {
-    padding: 0;
-    width: 7em;
-    height: 3em;
-  }
-`
-
 function Header({onClick, windowAtLeastTabletWidth}) {
   const [y, setY] = useState(window.scrollY)
   const [menuHidden, setMenuHidden] = useState(false)
@@ -79,7 +63,7 @@ function Header({onClick, windowAtLeastTabletWidth}) {
   return (
     <StyledHeader {...{menuHidden, ref}}>
       <ThemeToggler />
-      {windowAtLeastTabletWidth ? <HeaderNavLinks/> : <Hamburger {...{onClick}} />}
+      {windowAtLeastTabletWidth ? <NavLinks {...{windowAtLeastTabletWidth}}/> : <Hamburger {...{onClick}} />}
     </StyledHeader>
   )
 }

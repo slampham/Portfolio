@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { AiFillGithub } from 'react-icons/ai';
 import { FiExternalLink } from 'react-icons/fi';
+import { Context } from '../contexts/Context'
 
 const StyledProject = styled.div`
   position: relative;
@@ -60,7 +61,7 @@ const StyledProject = styled.div`
       object-fit: cover;
       height: 56.25vw;
       width: 100%;
-      opacity: 30%;
+      opacity: ${({theme}) => theme === 'dark' ? .5 : .9};
       border-radius: 5px;
       border: 1px solid var(--green);
 
@@ -99,9 +100,10 @@ const StyledProject = styled.div`
 function Project(props) {
   const {img, name, desc, techs, code, site} = props
   const Techs = techs.map(tech => <li key={tech}>{tech}</li>)
+  const {theme} = useContext(Context)
 
   return (
-    <StyledProject img={img} >
+    <StyledProject {...{img, theme}} >
       <figcaption >
         <h3>{name}</h3>
         <p>{desc}</p>

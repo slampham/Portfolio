@@ -63,7 +63,8 @@ const Style = createGlobalStyle`
     border-width: .01rem;
     outline: none;
     cursor: pointer;
-    transition: background-color var(--trans-time) ease-out;
+    transition: var(--trans-time) ease-out; /*FIXME: may want to not use 'ALL' transition properties */
+    transition-property: color, background-color;
 
     &:hover {
       color: var(--green);
