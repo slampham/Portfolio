@@ -18,8 +18,6 @@ const StyledButton = styled(motion.button)`
   > * {
     transition: color var(--trans-time) var(--trans-delay);
   }
-
-  ${({variants}) => console.log(variants)}
 `
 
 function ThemeToggler() {

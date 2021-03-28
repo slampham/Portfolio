@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { AiFillGithub } from 'react-icons/ai';
-import { FiExternalLink, FiPrinter } from 'react-icons/fi';
+import { FiExternalLink } from 'react-icons/fi';
 import { Context } from '../contexts/Context'
 import useInViewTransition from '../hooks/useInViewTransition'
 import { slowUp } from '../variants'
@@ -64,7 +64,7 @@ const StyledProject = styled(motion.div)`
       object-fit: cover;
       height: 56.25vw;
       width: 100%;
-      opacity: ${({theme}) => theme === 'dark' ? .5 : .9};
+      opacity: .25;
       border-radius: 5px;
       border: 1px solid var(--green);
 
@@ -85,6 +85,7 @@ const StyledProject = styled(motion.div)`
 
       img {
         height: 100%;
+        opacity: ${({theme}) => theme === 'dark' ? .5 : .9};
       }
     }
 
@@ -104,7 +105,7 @@ function Project(props) {
   const {img, name, desc, techs, code, site} = props
   const Techs = techs.map(tech => <li key={tech}>{tech}</li>)
   const {theme} = useContext(Context)
-  const { controls, ref } = useInViewTransition()
+  const { controls, ref } = useInViewTransition(.6)
 
   return (
     <StyledProject {...{img, theme, ref}} 
@@ -125,9 +126,11 @@ function Project(props) {
         </div>
       </figcaption>
 
-      <a href={site} className='img-link' target="_blank" rel="noopener noreferrer">
+      <motion.a href={site} className='img-link' target="_blank" rel="noopener noreferrer"
+        whileHover={{ scale: 1.05 }}
+      >
         <img src={img} alt={name} />
-      </a>
+      </motion.a>
 
     </StyledProject>
   )

@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { useInView } from 'react-intersection-observer'
-import { motion, useAnimation } from 'framer-motion' 
-import { up, slowUp } from '../variants'
+import { motion } from 'framer-motion' 
+import { slowUp } from '../variants'
 import useInViewTransition from '../hooks/useInViewTransition'
 
 const StyledSection = styled(motion.section)`

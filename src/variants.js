@@ -14,7 +14,7 @@ const down = {
   show: { 
     opacity: 1,
     y: 0
-  }
+  },
 }
 
 const up = {
