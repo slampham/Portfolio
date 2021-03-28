@@ -18,6 +18,8 @@ const StyledButton = styled(motion.button)`
   > * {
     transition: color var(--trans-time) var(--trans-delay);
   }
+
+  ${({variants}) => console.log(variants)}
 `
 
 function ThemeToggler() {
@@ -31,9 +33,8 @@ function ThemeToggler() {
 
   return (
     <StyledButton {...{ref, width, onClick: toggleTheme}} 
-      initial={{y: -50, opacity: 0}}
-      animate={{y: 0, opacity: 1}}
-      transition={{delay: 1}}
+      initial={{opacity: 0, y: -20}}
+      animate={{opacity: 1, y: 0, transition: {delay: .25}}}
     >
       <RiMoonClearFill color={theme === 'light' ? 'gray' : 'white'} />
       <FiSun color={theme === 'light' ? 'yellow' : 'gray'} />

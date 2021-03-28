@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import resume from '../static/SpencerPhamResume.pdf'
+import { container, item } from '../variants'
 
 const StyledLinks = styled(motion.ul)`
   height: 100%;
@@ -54,26 +55,6 @@ const StyledLinks = styled(motion.ul)`
     `
   }
 `;
-
-const container = {
-  show: {
-    transition: {
-      delayChildren: .25,
-      staggerChildren: .1,
-    }
-  }
-}
-
-const item = {
-  hidden: { 
-    opacity: 0,
-    y: -50
-   },
-  show: { 
-    opacity: 1 ,
-    y: 0
-  }
-}
 
 function NavLinks({windowAtLeastTabletWidth}) {
   return (
