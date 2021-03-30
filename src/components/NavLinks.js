@@ -63,7 +63,7 @@ function NavLinks({windowAtLeastTabletWidth}) {
       <motion.a href="#projects" variants={down}><li>Projects</li></motion.a>
       <motion.a href="#skills" variants={down}><li>Skills</li></motion.a>
       <motion.a href="#contact" variants={down}><li>Contact</li></motion.a>
-      <motion.button type='submit' onClick={() => window.open(resume)} variants={down}>Resume</motion.button>
+      <a href={resume} target="_blank"><motion.button variants={down}>Resume</motion.button></a>
     </StyledLinks>
   )
 }
