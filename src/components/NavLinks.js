@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
-import resume from '../static/SpencerPhamResume.pdf'
 import { stagger, down } from '../variants'
 
 const StyledLinks = styled(motion.ul)`
@@ -63,7 +62,7 @@ function NavLinks({windowAtLeastTabletWidth}) {
       <motion.a href="#projects" variants={down}><li>Projects</li></motion.a>
       <motion.a href="#skills" variants={down}><li>Skills</li></motion.a>
       <motion.a href="#contact" variants={down}><li>Contact</li></motion.a>
-      <a href={resume} target="_blank"><motion.button variants={down}>Resume</motion.button></a>
+      <a href='/static/SpencerPhamResume.pdf' target="_blank"><motion.button variants={down}>Resume</motion.button></a>
     </StyledLinks>
   )
 }

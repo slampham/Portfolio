@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { createGlobalStyle } from 'styled-components'
-import { Context } from '../contexts/Context'
-import '../fonts/fonts.css'
+import { Context } from './contexts/Context'
+import './fonts/fonts.css'
 
 const Style = createGlobalStyle`
   :root {  /* GLOBAL VARIABLES */

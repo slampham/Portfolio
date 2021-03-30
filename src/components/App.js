@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ContextProvider } from '../contexts/Context'
-import GlobalStyle from '../styles/GlobalStyle'
+import GlobalStyle from '../GlobalStyle'
 import Nav from './Nav'
 import Cover from './Cover'
 import Section, { StyledSection } from './Section'
